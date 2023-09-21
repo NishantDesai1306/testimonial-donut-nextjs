@@ -1,0 +1,59 @@
+* {
+  -webkit-tap-highlight-color: transparent; 
+}
+
+body {
+  margin: 0px;
+}
+
+mux-player {
+  --controls: none;
+  --media-object-fit: cover;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  pointer-events: none;
+  height: 100%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+
+.testimonial-container::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-container .testimonial {
+  height: auto;
+}
+
+.testimonial-container .testimonial:first-child {
+  margin-left: auto;
+}
+
+.testimonial-container .testimonial:last-child {
+  margin-right: auto;
+}
+
+/* videojs */
+.testimonial-video .vjs-fill {
+  height: 100%;
+  width: 100%;
+}
+
+.testimonial-video .vjs-fill video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.testimonial-video .testimonial-video-player .vjs-poster img {
+  object-fit: cover;
+}

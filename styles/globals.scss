@@ -1,0 +1,22 @@
+* {
+  -webkit-tap-highlight-color: transparent; 
+}
+
+body {
+  margin: 0px;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.mux-player {
+  --controls: none;
+  --media-object-fit: cover;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  pointer-events: none;
+  height: 100%;
+}
