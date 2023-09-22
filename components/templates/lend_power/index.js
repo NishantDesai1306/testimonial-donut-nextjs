@@ -32,6 +32,7 @@ export default function Widget({ widget, testimonial }) {
           className={`mux-player ${styles["testimonial-video-player"]}`}
           streamType="on-demand"
           paused={!isPlaying}
+          onEnded={togglePlayback}
           playbackId={testimonial.video.url}
           poster={testimonial.video.poster}
         />
