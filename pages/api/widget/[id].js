@@ -7,10 +7,10 @@ function loadData (id) {
       resolve({
         widget: {
           _id: "64e97b7c62eba5ae537d64f6",
-          layout: "testimonial_donut",
+          layout: "lend_power",
           fonts: {
-            name: "DM Sans",
-            link: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
+            name: "Poppins",
+            link: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
           }
         },
         testimonials: [
@@ -68,19 +68,19 @@ export default async function handler(req, res) {
     method,
   } = req;
 
-  // await dbConnect();
+  await dbConnect();
 
   switch (method) {
     case 'GET' /* Get a model by its ID */:
       try {
-        // const {
-        //   widget,
-        //   testimonials,
-        // } = await Widget.getWidgetWithTestimonials(id);
         const {
           widget,
           testimonials,
-        } = await loadData(id);
+        } = await Widget.getWidgetWithTestimonials(id);
+        // const {
+        //   widget,
+        //   testimonials,
+        // } = await loadData(id);
         
         if (!widget) {
           return res.status(400).json({ success: false })
