@@ -3,6 +3,7 @@ import styles from "./widget.module.scss";
 import WidgetContextProvider from "../../context/widget";
 
 const TestimonialDonutWidget = dynamic(() => import("../templates/testimonial_donut"));
+const LendPowerWidget = dynamic(() => import("../templates/lend_power"));
 
 function Testimonial(props) {
   const { widget } = props;
@@ -11,13 +12,17 @@ function Testimonial(props) {
     return (
       <TestimonialDonutWidget {...props} />
     );
+  } else if (widget.layout === 'lend_power') {
+    return (
+      <LendPowerWidget {...props} />
+    );
+  } else {
+    return (
+      <div>
+        <div>Rendering Widget</div>
+      </div>
+    );
   }
-
-  return (
-    <div>
-      <div>Rendering Widget</div>
-    </div>
-  );
 }
 
 export default function Widget(props) {
