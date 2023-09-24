@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const testimonialSchema = new Schema({
   widget: {
@@ -35,6 +35,4 @@ const testimonialSchema = new Schema({
   },
 });
 
-const Testimonial = model("Testimonial", testimonialSchema);
-
-export default Testimonial;
+export default models.Testimonial || model("Testimonial", testimonialSchema);

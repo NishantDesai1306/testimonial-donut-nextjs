@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, models } from "mongoose";
 import Testimonial from "./testimonial.js";
 
 const WidgetSchema = new Schema({
@@ -36,6 +36,4 @@ WidgetSchema.statics.getWidgetWithTestimonials = async function (id) {
   };
 }
 
-const Widget = model("Widget", WidgetSchema);
-
-export default Widget;
+export default models.Widget || model("Widget", WidgetSchema);
